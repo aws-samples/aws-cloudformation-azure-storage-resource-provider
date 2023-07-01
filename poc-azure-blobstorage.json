@@ -1,0 +1,60 @@
+{
+    "typeName": "POC::Azure::BlobStorage",
+    "description": "An example resource that creates an Azure Storage account along with a Blob container.",
+    "properties": {
+        "AzureSubscriptionId": {
+            "description": "Subscription ID of the Azure Account.",
+            "type": "string"
+        },
+        "AzureClientId": {
+            "description": "App ID CloudFormation will use to access Azure.",
+            "type": "string"
+        },
+        "AzureTenantId": {
+            "description": "Directory ID CloudFormation will use to access Azure.",
+            "type": "string"
+        },
+        "AzureClientSecret": {
+            "description": "Client credentials CloudFormation will use to authenticate to Azure and access services.",
+            "type": "string"
+        },
+        "AzureResourceGroup": {
+            "description": "Name of the Resource Group created by CloudFormation.",
+            "type": "string"
+        },
+        "AzureBlobStorageAccountName": {
+            "description": "Name of the Blob Storage account created by CloudFormation.",
+            "type": "string"
+        },
+        "AzureBlobContainerUrl": {
+            "description": "Url of the Blob container created by CloudFormation.",
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AzureSubscriptionId",
+        "AzureClientId",
+        "AzureTenantId",
+        "AzureClientSecret"
+    ],
+    "readOnlyProperties": [
+        "/properties/AzureBlobStorageAccountName",
+        "/properties/AzureBlobContainerUrl",
+        "/properties/AzureResourceGroup"
+    ],
+    "primaryIdentifier": [
+        "/properties/AzureBlobContainerUrl"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [""]
+        },
+        "read": {
+            "permissions": [""]
+        },
+        "delete": {
+            "permissions": [""]
+        }
+    }
+}

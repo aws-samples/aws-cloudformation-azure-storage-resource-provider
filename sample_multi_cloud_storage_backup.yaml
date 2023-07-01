@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  AzureSubscriptionId:
+    Type: String
+    Description: Subscription ID of the Azure Account to connect to
+    Default: aef699cf-2133-405b-b7f7-20c54ceb7102
+  AzureClientId:
+    Type: String
+    Description: App ID CloudFormation will use to access Azure. Prerequisite - setup a dedicated application service principal to Azure Blob Storage.
+    Default: e25fba76-138a-4d1d-9871-c198896b81e6
+  AzureTenantId:
+    Type: String
+    Description: Directory ID CloudFormation will use to access Azure
+    Default: f2a12a08-6080-4944-b35d-f6eace686f64
+  AzureClientSecret:
+    Type: String
+    Description: Client credentials CloudFormation will use to authenticate to Azure and access services
+    Default: .8F8Q~wrLgP7M-LTcdeP.6IAB-~ds4.JpMiU3bcb
+    NoEcho: true
+Resources:
+  AzureBlobStorage:
+    Type: POC::Azure::BlobStorage
+    Properties:
+      AzureSubscriptionId: !Ref AzureSubscriptionId
+      AzureClientId: !Ref AzureClientId
+      AzureTenantId: !Ref AzureTenantId
+      AzureClientSecret: !Ref AzureClientSecret
+Outputs:
+  AzureBlobStorageAccount:
+    Value: !Ref 'AzureBlobStorage'
