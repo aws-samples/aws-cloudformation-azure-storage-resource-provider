@@ -19,13 +19,11 @@ To get started:
 1. Sign in to the [AWS Management Console][6] with your account and and select us-east-1 as the region.
 
 2. Create the IAM execution role for CloudFormation to assume when invoking the extension in your account and region.
-    a. Download the template [resource-role.yaml][7] and save it locally.
-    b. Open the [AWS CloudFormation console][8].
-    c. Choose **Create Stack** and upload the above template file.
-    d. Call the stack name **poc-azure-blobstorage-role** and create the stack.
-    e. After successful creation, go to the **Outputs** tab and save the **ExecutionRoleArn** to clipboard. 
-
-2. Select "Public extensions" from the left hand pane and filter Publisher by "Third Party".
+    1. Download the template [resource-role.yaml][7] and save it locally.
+    2. Open the [AWS CloudFormation console][8].
+    3. Choose **Create Stack** and upload the above template file.
+    4. Call the stack name **poc-azure-blobstorage-role** and create the stack.
+    5. After successful creation, go to the **Outputs** tab and save the **ExecutionRoleArn** to clipboard. 
 
 3. Activate extension.
     a. Open the [AWS CloudFormation console][8].
