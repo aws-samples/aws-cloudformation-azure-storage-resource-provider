@@ -114,7 +114,7 @@ def create_handler(
             payload = {'location': LOCATION}
             url = 'https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}?api-version=2022-01-01'
             url = url.format(subscriptionId=model.AzureSubscriptionId, resourceGroupName=RESOURCE_GROUP_NAME)
-            response = requests.put(url, headers=headers, json=payload)
+            response = requests.put(url, headers=headers, json=payload, timeout=90)
         
             # Creating Storage Account
             payload = {
@@ -130,7 +130,7 @@ def create_handler(
             
             # Storage Account creation in Azure is an async operation.
             # Response code 202 indicates the request has been Accepted
-            response = requests.put(url, headers=headers, json=payload)
+            response = requests.put(url, headers=headers, json=payload, timeout=90)
 
             # Async operation has started
             if response.status_code == 202:
@@ -144,7 +144,7 @@ def create_handler(
 
                 # Now check the status of the operation
                 while True:
-                    response = requests.get(status_url, headers=headers)
+                    response = requests.get(status_url, headers=headers, timeout=90)
 
                     # Check the status code
                     # 202 indicates it's still running
@@ -176,7 +176,7 @@ def create_handler(
                 storage_token = get_azure_token_for_storage_account(model)
                 headers = azure_storage_request_header(storage_token)
                 
-                response = requests.put(url, headers=headers)
+                response = requests.put(url, headers=headers, timeout=90)
                 model.AzureBlobContainerUrl = url.split('?')[0]
 
                 LOG.info(f"Blob Container Url: {model.AzureBlobContainerUrl}")
@@ -462,7 +462,7 @@ def get_azure_storage_account(model: ResourceModel):
         headers = {'Authorization': 'Bearer ' + token['accessToken']}
         url = f"https://management.azure.com/subscriptions/{model.AzureSubscriptionId}/resourceGroups/{model.AzureResourceGroup}/providers/Microsoft.Storage/storageAccounts/{model.AzureBlobStorageAccountName}?api-version=2021-04-01"
 
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=90)
 
         # Check the response code for Not Found
         if response.status_code == 200:
@@ -486,7 +486,7 @@ def delete_azure_storage_account(model: ResourceModel):
         headers = {'Authorization': 'Bearer ' + token['accessToken']}
         url = f"https://management.azure.com/subscriptions/{model.AzureSubscriptionId}/resourceGroups/{model.AzureResourceGroup}/providers/Microsoft.Storage/storageAccounts/{model.AzureBlobStorageAccountName}?api-version=2022-09-01"
 
-        response = requests.delete(url, headers=headers)
+        response = requests.delete(url, headers=headers, timeout=90)
 
         # Check the response code for Not Found
         if response.status_code == 200:
@@ -524,7 +524,7 @@ def get_azure_token_for_storage_account(model: ResourceModel,
         'resource': resource_url
     }
 
-    response = requests.post(token_url, data=token_request_data)
+    response = requests.post(token_url, data=token_request_data, timeout=90)
 
     response_json = response.json()
     return response_json['access_token']
