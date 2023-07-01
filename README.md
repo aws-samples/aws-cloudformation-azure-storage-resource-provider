@@ -37,8 +37,6 @@ To get started:
 
 Once the extension is successfully activated, CloudFormation displays the details page for that extension.
 
-For more information about available commands and workflows, see the official [AWS documentation][25].
-
 ## Supported regions
 
 The sample extension is currently ONLY available in **us-east-1**.
