@@ -26,14 +26,14 @@ To get started:
     5. After successful creation, go to the **Outputs** tab and save the **ExecutionRoleArn** to clipboard. 
 
 3. Activate extension.
-    a. Open the [AWS CloudFormation console][8].
-    b. From the **CloudFormation** navigation pane, under **Registry**, select **Public extensions**.
-    c. Choose **Resource types** as your extension type.
-    d. Choose **Third party** as your Publisher.
-    e. Search by **Extension name prefix** i.e. POC.
-    f. Select the extension, then select **Activate**.
-    g. For the **Execution Role ARN**, enter the saved ARN from earlier.
-    h. Select **Activate extension**.
+    1. Open the [AWS CloudFormation console][8].
+    2. From the **CloudFormation** navigation pane, under **Registry**, select **Public extensions**.
+    3. Choose **Resource types** as your extension type.
+    4. Choose **Third party** as your Publisher.
+    5. Search by **Extension name prefix** i.e. POC.
+    6. Select the extension, then select **Activate**.
+    7. For the **Execution Role ARN**, enter the saved ARN from earlier.
+    8. Select **Activate extension**.
 
 Once the extension is successfully activated, CloudFormation displays the details page for that extension.
 
@@ -88,5 +88,5 @@ Please refer to Step 3 of [this blog][5].
 [4]: https://portal.azure.com/#home
 [5]: https://amazon.awsapps.com/workdocs/index.html#/document/5e31c98cfa6ac8e028dc4bcbf3bdce56269411c43c45f41b367b29c1cd1eb9d2
 [6]: https://aws.amazon.com/console/
-[7]: https://todo
+[7]: https://github.com/aws-samples/aws-cloudformation-azure-storage-resource-provider/blob/main/resource-role.yaml
 [8]: https://console.aws.amazon.com/cloudformation/
