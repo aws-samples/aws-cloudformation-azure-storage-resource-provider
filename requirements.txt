@@ -15,7 +15,7 @@ distlib==0.3.6
 docker==6.0.1
 exceptiongroup==1.1.0
 filelock==3.8.0
-Flask==2.2.2
+Flask==2.2.5
 hypothesis==6.68.2
 idna==3.4
 importlib-metadata==5.0.0
