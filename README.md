@@ -1,6 +1,6 @@
 # Azure Storage CloudFormation Resource Provider
 
-AWS CloudFormation registry[1] lets you manage extensions, both public and private, such as resources, modules, hooks that are available for use in your AWS account. The registry makes it easier to discover and provision extensions in your AWS CloudFormation templates in the same manner you use AWS-provided resources. 
+[AWS CloudFormation registry][1] lets you manage extensions, both public and private, such as resources, modules, hooks that are available for use in your AWS account. The registry makes it easier to discover and provision extensions in your AWS CloudFormation templates in the same manner you use AWS-provided resources. 
 
 This public extension provisions the Azure storage account along with a Blob container.
 
