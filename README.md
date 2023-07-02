@@ -43,7 +43,7 @@ The sample extension is currently ONLY available in **us-east-1**.
 
 ## Example
 
-### Provision a new Azure Storage account and a Blob Container. Extension creates a new Resource Group
+### Provision a new Azure Storage account and a Blob Container. Extension creates a new Resource Group.
 
 ```yaml
 ---
