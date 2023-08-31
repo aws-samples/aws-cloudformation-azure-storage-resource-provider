@@ -80,7 +80,7 @@ Outputs:
 
 ### Add Registry Resource to AWS CDK app
 
-You can use the [CfnResource][9] construct to include a resource from the AWS CloudFormation Public Registry in your application. This construct is in the CDK's aws-cdk-lib module. 
+You can use the [CfnResource][9] construct to include a resource from the AWS CloudFormation Public Registry in your application. This construct is in the CDK's `aws-cdk-lib` module. 
 
 Please refer to this [Sample CDK Application][10]. 
 
