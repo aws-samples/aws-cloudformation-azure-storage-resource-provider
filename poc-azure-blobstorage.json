@@ -48,13 +48,13 @@
     ],
     "handlers": {
         "create": {
-            "permissions": [""]
+            "permissions": []
         },
         "read": {
-            "permissions": [""]
+            "permissions": []
         },
         "delete": {
-            "permissions": [""]
+            "permissions": []
         }
     }
 }
