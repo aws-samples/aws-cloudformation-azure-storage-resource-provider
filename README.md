@@ -12,9 +12,7 @@ NOTE: Currently this AWS CloudFormation extension is only available in **us-east
 * [Azure Account][4]
 * Azure Credentials - Follow **Build a Secure Foundation** step from this [AWS Workshop][5].
 
-## AWS Management Console
-
-To get started:
+## Getting Started
 
 1. Sign in to the [AWS Management Console][6] with your account and select **us-east-1** as the region.
 
