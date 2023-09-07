@@ -129,3 +129,4 @@ sam-tests/
 rpdk.log*
 
 *.zip
+sample_multi_cloud_storage_backup.yaml
